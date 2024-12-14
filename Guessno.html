@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guess Game</title>
+    <style>
+         body,html{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        h2{
+            font-size: 300%;
+            color: white;
+        }
+        .container{
+            background-color: #525252;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+           
+        }
+        .box{
+            background-color: rgb(40, 40, 40);
+            text-align: center;
+            padding: 40px 100px;
+            border-radius: 20px;
+            border:5px solid white;
+        }
+        p{
+            font-size: 200%;
+        }
+        input{
+            padding: 20px;
+            background-color: grey;
+        }
+        button{
+            background-color: white;
+            padding: 20px 50px;
+            border-radius: 20px;
+        }
+        button:hover{
+            background-color: white;
+        } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>Guess The Number</h2>
+            <input id="num1" type="number" placeholder="Enter your number">
+            <button onclick="guess()">Try</button>
+            <p id="won"></p>
+    </div>
+ </div>
+ <script>
+    let rand=Math.floor(Math.random()*10);
+    function guess(){
+        let input=parseInt(document.getElementById("num1").value);
+        //let rand=Math.floor(Math.random()*10);
+        if(input==rand){
+            document.getElementById("won").innerHTML="Yes You Won";
+        }
+        else if(input<rand){
+            alert("Guess a higher number");
+        }
+        else{
+            alert("Guess a lower number");
+        }
+    }
+ </script>
+</body>
+</html>
